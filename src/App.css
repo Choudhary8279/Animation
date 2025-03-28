@@ -1,0 +1,468 @@
+@font-face {
+  font-family: "Bicyclette";
+  src: local("Bicyclette"),
+    url(./assets/fonts/fonnts.com-Bicyclette_Regular.otf) format("truetype");
+}
+
+@font-face {
+  font-family: "Bicyclette-bd";
+  src: local("Bicyclette-bd"),
+    url(./assets/fonts/fonnts.com-Bicyclette_Bold.otf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Bicyclette";
+}
+#root {
+  width: 100%;
+}
+:root {
+  --yellow: #ffde71;
+}
+/* .container-fluid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+} */
+
+.scroll-container {
+  scroll-behavior: smooth;
+}
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.section1 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.scroll-container1 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section2 {
+  /* overflow: hidden; */
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 296px;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  box-sizing: border-box;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.section21 {
+  /* overflow: hidden; */
+  width: 100%;
+  margin-top: 296px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.final-section {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.videoTag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+.loader-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.videoloader {
+  overflow: hidden;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  transition: transform 0.8s ease-out;
+}
+.container {
+  position: relative;
+  z-index: 1;
+}
+.header-sec {
+  /* position: sticky; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 22px 0 0 0;
+  z-index: 1000;
+}
+.logo {
+  width: 119px;
+}
+.left-head img {
+  width: 22.5px;
+  height: 22.5px;
+}
+.right-head img {
+  width: 20px;
+  height: 20px;
+}
+.right-head {
+  text-align: center;
+}
+.right-head p {
+  color: #ffffff;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 9.52px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Hero sec css  */
+.headText {
+  font-family: "Bicyclette-bd";
+  font-size: 18px;
+  line-height: 23.8px;
+  text-align: center;
+  text-decoration-skip-ink: none;
+  color: var(--yellow);
+  padding-bottom: 8px;
+  text-transform: uppercase;
+  /* text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3), 0px 0px 20px rgba(255, 223, 0, 0.4), 0px 0px 30px rgba(255, 223, 0, 0.4); */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5),
+    0px 0px 20px rgba(150, 75, 0, 0.4), 0px 0px 30px rgba(150, 75, 0, 0.8);
+}
+.titleText {
+  /* text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3), 0px 0px 20px rgba(255, 223, 0, 0.4), 0px 0px 30px rgba(255, 223, 0, 0.4);  */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5),
+    0px 0px 20px rgba(150, 75, 0, 0.4), 0px 0px 30px rgba(150, 75, 0, 0.8);
+  font-family: "Bicyclette-bd";
+  font-size: 32px;
+  line-height: 42.84px;
+  text-align: center;
+  text-decoration-skip-ink: none;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+.headp {
+  padding-top: 6px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 18.24px;
+  text-align: center;
+  background: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1);
+}
+
+.section.inView {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.section.outView {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+.main-container {
+  position: absolute;
+  top: 45%;
+  transform: translatey(-50%);
+}
+.weapon {
+  position: absolute;
+  right: -148px;
+  /* bottom: 10px; */
+  width: 306.15px;
+  /* height: 570.55px; */
+  top: 104px;
+  /* left: 306.48px; */
+  gap: 0px;
+  opacity: 0px;
+  transform: rotate(-42deg);
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.5s ease-in-out;
+}
+.right-img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: relative;
+  height: 100%;
+}
+.h2-weapon {
+  width: 150px;
+  transform: rotate(-9deg);
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.9;
+}
+.right1-img {
+  height: 270px;
+  top: 69px;
+  width: 300px;
+  overflow: hidden;
+  position: absolute;
+  top: 147px;
+  left: -33px;
+}
+
+.h21-weapon {
+  opacity: 0.6;
+  width: 169px;
+}
+.left1-img {
+  position: absolute;
+  bottom: 21px;
+  right: -36px;
+}
+.h3-weapon {
+  width: 150px;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.8;
+  transform: rotate(-17deg);
+}
+.h31-weapon {
+  width: 169px;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0.8;
+  transform: rotate(15deg);
+}
+.content {
+  padding: 0 20px;
+}
+.right2-img {
+  position: absolute;
+  top: 160px;
+  left: -30px;
+}
+.left2-img {
+  position: absolute;
+  bottom: 27px;
+  right: -46px;
+}
+
+/* carousel css  */
+
+.owl-carousel .item img {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px; /* Add a slight curve to all images */
+  background: rgba(0, 0, 0, 0.2);
+  height: 380px;
+}
+
+.owl-carousel .owl-item.active.center img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the center item */
+  mask: radial-gradient(112% 10% at bottom, transparent 46%, red 30%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.owl-carousel .owl-item.active.center {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow to the center item */
+  mask: radial-gradient(112% 4% at top, transparent 46%, red 30%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.slider-text {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.slider-text p {
+  font-family: "Bicyclette-bd";
+  font-size: 14px;
+  line-height: 18.6px;
+  letter-spacing: 0.07em;
+  padding-bottom: 3px;
+  background: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1);
+}
+.slider-text h2 {
+  font-family: "Bicyclette-bd";
+  background: radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 1), rgba(153, 153, 153, 1),
+    rgba(153, 153, 153, 1);
+  font-size: 28px;
+  line-height: 33.5px;
+  letter-spacing: 0.07em;
+  text-align: center;
+}
+
+.owl-carousel .owl-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.owl-carousel .owl-item:not(.active) .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+.owl-theme .owl-dots,
+.owl-theme .owl-nav {
+  display: none;
+}
+
+/* read more button css  */
+
+.glowing-button-container {
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowing-button {
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  padding: 20px 10px;
+  text-transform: uppercase;
+  color: #ffde71;
+  background-color: rgba(199, 199, 199, 0.44);
+  border: 1px solid #ffde71; /* Gold border */
+  border-radius: 10px; /* Rounded corners */
+  font-family: "Bicyclette-bd";
+  font-size: 20px;
+  line-height: 17.12px;
+  text-align: center;
+
+  cursor: pointer;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffae00;
+  /* box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700; */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glowing-button::before{
+  content: "";
+    position: absolute;
+    width: 90%;
+    height: 15px;
+    top: -9px;
+    left: 5%;
+    border-radius: 5px;
+    background: #FFDE71;
+    /* box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700, 0 0 60px #ffae00; */
+    opacity: 1;
+    animation: glow 2s infinite alternate;
+    /* z-index: -1; */
+}
+.glowing-button::after {
+  content: "";
+    position: absolute;
+    width: 90%;
+    height: 15px;
+    bottom: -9px;
+    left: 5%;
+    border-radius: 5px;
+    background: #FFDE71;
+    /* box-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700, 0 0 60px #ffae00; */
+    opacity: 1;
+    animation: glow 2s infinite alternate;
+    /* z-index: -1; */
+}
+
+.fancybox-image, .fancybox-spaceball {
+  position: static!important;
+  margin: auto;
+  display: flex;
+  width: 95%;
+}
+.fancybox-navigation .fancybox-button {
+  background-clip: content-box;
+  height: 100px;
+  opacity: 0;
+  position: absolute;
+  bottom: 0; /* Align to the bottom */
+  top: unset; /* Remove predefined top property */
+  width: 70px;
+}
+.fancybox-navigation .fancybox-button--arrow_left {
+  left: 45%;
+}
+.fancybox-navigation .fancybox-button--arrow_right {
+  right: 45%;
+}
+.owl-carousel {
+  display: block;
+  width: 100%;
+  z-index: 1;
+}
+
+.comic-section{
+  height: 100vh;
+  padding-top: 12%;
+}
+@media screen and (max-width:600px){
+  .fancybox-navigation .fancybox-button--arrow_left {
+    left: 39%;
+}
+.fancybox-navigation .fancybox-button--arrow_right {
+  right: 39%;
+}
+.comic-section{
+  height: 100vh;
+  padding-top: 28%;
+}
+}
+@media (max-width: 768px) {
+  .header-sec {
+    height: 60px; /* Adjust height for smaller screens */
+  }
+}
